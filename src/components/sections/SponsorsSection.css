@@ -1,0 +1,394 @@
+#sponsors {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: var(--section-py) var(--section-px);
+}
+
+.container { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+}
+
+.main-title { 
+  text-align: center; 
+  font-size: 2.5rem; 
+  margin-bottom: 60px; 
+  text-transform: uppercase; 
+  letter-spacing: 3px; 
+  font-weight: 800; 
+  background: linear-gradient(90deg, #00ff88, #00e5ff, #7fff00); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  background-clip: text; 
+}
+
+.sponsor-category { 
+  margin-bottom: 60px; 
+}
+
+.category-title { 
+  font-size: 1.5rem; 
+  margin-bottom: 30px; 
+  padding-left: 15px; 
+  text-transform: capitalize; 
+}
+
+.community-tier .category-title { 
+  border-left: 4px solid #60a5fa; 
+  color: #93c5fd; 
+}
+
+.logo-tier .category-title { 
+  border-left: 4px solid #f43f5e; 
+  color: #fda4af; 
+}
+
+.it-tier .category-title { 
+  border-left: 4px solid #a855f7; 
+  color: #d8b4fe; 
+}
+
+.food-tier .category-title { 
+  border-left: 4px solid #f59e0b; 
+  color: #fde68a; 
+}
+
+.sponsor-grid { 
+  padding: 30px; 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 40px; 
+}
+
+.card-container { 
+  perspective: 1000px; 
+  height: 250px; 
+  position: relative; 
+  border-radius: 16px; 
+  overflow: hidden; 
+  background: #141e1b; 
+}
+
+.card-container::before { 
+  content: ''; 
+  position: absolute; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%; 
+  animation: snake-rotate 4s linear infinite; 
+  z-index: 1; 
+}
+
+.community-tier .card-container::before { 
+  background: conic-gradient(transparent, transparent, transparent, #60a5fa); 
+}
+
+.logo-tier .card-container::before { 
+  background: conic-gradient(transparent, transparent, transparent, #f43f5e); 
+}
+
+.it-tier .card-container::before { 
+  background: conic-gradient(transparent, transparent, transparent, #a855f7); 
+}
+
+.food-tier .card-container::before { 
+  background: conic-gradient(transparent, transparent, transparent, #f59e0b); 
+}
+
+@keyframes snake-rotate { 
+  100% { transform: rotate(360deg); } 
+}
+
+.sponsorcard { 
+  width: calc(100% - 4px); 
+  height: calc(100% - 4px); 
+  position: absolute; 
+  top: 2px; 
+  left: 2px; 
+  transform-style: preserve-3d; 
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); 
+  cursor: pointer; 
+  z-index: 2; 
+  border-radius: 14px; 
+}
+
+.card-container:hover .sponsorcard { 
+  transform: rotateY(180deg); 
+}
+
+.card-front, .card-back { 
+  position: absolute; 
+  width: 100%; 
+  height: 100%; 
+  backface-visibility: hidden; 
+  border-radius: 14px; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 24px; 
+}
+
+.card-front { 
+  background: linear-gradient(145deg, #16221f, #0f1715); 
+}
+
+.community-tier .card-back { 
+  background: linear-gradient(145deg, #1e3a8a, #0f172a); 
+}
+
+.logo-tier .card-back { 
+  background: linear-gradient(145deg, #881337, #4c0519); 
+}
+
+.it-tier .card-back { 
+  background: linear-gradient(145deg, #4c1d95, #2e1065); 
+}
+
+.food-tier .card-back { 
+  background: linear-gradient(145deg, #78350f, #451a03); 
+}
+
+.card-back { 
+  transform: rotateY(180deg); 
+  text-align: center; 
+}
+
+.front-content { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  width: 100%; 
+}
+
+.back-content { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  flex-grow: 1; 
+  width: 100%; 
+}
+
+.logo-div { 
+  width: 80px; 
+  height: 50px; 
+  border-radius: 8px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin-bottom: 12px; 
+  padding: 5px; 
+}
+
+.community-tier .logo-div { 
+  background: rgba(96,165,250,0.05); 
+  border: 1px solid rgba(96,165,250,0.2); 
+}
+
+.logo-tier .logo-div { 
+  background: rgba(244,63,94,0.05); 
+  border: 1px solid rgba(244,63,94,0.2); 
+}
+
+.it-tier .logo-div { 
+  background: rgba(168,85,247,0.05); 
+  border: 1px solid rgba(168,85,247,0.2); 
+}
+
+.food-tier .logo-div { 
+  background: rgba(245,158,11,0.05); 
+  border: 1px solid rgba(245,158,11,0.2); 
+}
+
+.logo-text { 
+  font-weight: 700; 
+  letter-spacing: 1px; 
+  font-size: 1.1rem; 
+}
+
+.community-tier .logo-text { 
+  color: #60a5fa; 
+}
+
+.logo-tier .logo-text { 
+  color: #f43f5e; 
+}
+
+.it-tier .logo-text { 
+  color: #a855f7; 
+}
+
+.food-tier .logo-text { 
+  color: #f59e0b; 
+}
+
+.sponsor-name { 
+  font-size: 1.25rem; 
+  font-weight: 600; 
+  color: #f3f4f6; 
+  letter-spacing: 0.5px; 
+}
+
+.sponsor-tier { 
+  font-size: 0.8rem; 
+  color: #6b7280; 
+  text-transform: uppercase; 
+  margin-top: 4px; 
+}
+
+.back-title { 
+  font-size: 1.2rem; 
+  margin-bottom: 8px; 
+  font-weight: 700; 
+  letter-spacing: 0.5px; 
+  color: #ffffff; 
+}
+
+.back-desc { 
+  font-size: 0.85rem; 
+  line-height: 1.5; 
+}
+
+.community-tier .back-desc { 
+  color: #bfdbfe; 
+}
+
+.logo-tier .back-desc { 
+  color: #fecdd3; 
+}
+
+.it-tier .back-desc { 
+  color: #e9d5ff; 
+}
+
+.food-tier .back-desc { 
+  color: #fef3c7; 
+}
+
+.btn { 
+  outline: none; 
+  border: none; 
+  padding: 8px 20px; 
+  border-radius: 20px; 
+  font-size: 0.85rem; 
+  font-weight: 600; 
+  letter-spacing: 0.5px; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
+  width: 85%; 
+  text-align: center; 
+  text-decoration: none; 
+  display: inline-block; 
+}
+
+.community-tier .btn-visit { 
+  background: #60a5fa; 
+  color: #1e3a8a; 
+}
+
+.logo-tier .btn-visit { 
+  background: #f43f5e; 
+  color: #ffffff; 
+}
+
+.it-tier .btn-visit { 
+  background: #a855f7; 
+  color: #ffffff; 
+}
+
+.food-tier .btn-visit { 
+  background: #f59e0b; 
+  color: #451a03; 
+}
+
+.btn-visit:hover { 
+  background: #ffffff !important; 
+  color: #111827 !important; 
+  box-shadow: 0 0 15px rgba(255,255,255,0.5); 
+  transform: translateY(-1px); 
+}
+
+.sponsor-btn { 
+  display: inline-block; 
+  padding: 12px 28px; 
+  background: #00c97a; 
+  color: #04110b; 
+  text-decoration: none; 
+  border: none; 
+  border-radius: 8px; 
+  font-weight: 700; 
+  font-size: 1rem; 
+  cursor: pointer; 
+  transition: background 0.3s ease, color 0.3s ease; 
+  margin-left: 42%; 
+}
+
+.sponsor-btn:hover { 
+  background: #00e5ff; 
+  color: #031014; 
+}
+
+@media (max-width: 768px) {
+  #sponsors {
+    padding: 50px 15px;
+  }
+  
+  .main-title {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+  
+  .sponsor-grid {
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+  
+  .sponsor-btn {
+    margin-left: 25%;
+  }
+}
+
+@media (max-width: 480px) {
+  #sponsors {
+    padding: 30px 10px;
+  }
+  
+  .main-title {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+  }
+  
+  .category-title {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+  
+  .sponsor-grid {
+    padding: 15px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .card-container {
+    height: 200px;
+  }
+  
+  .sponsor-name {
+    font-size: 1rem;
+  }
+  
+  .sponsor-tier {
+    font-size: 0.7rem;
+  }
+  
+  .sponsor-btn {
+    margin-left: 20%;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

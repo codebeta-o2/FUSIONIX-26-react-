@@ -1,0 +1,97 @@
+#teams {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: var(--section-py) var(--section-px);
+}
+
+.section-title { 
+  font-family: 'Orbitron', monospace; 
+  font-size: clamp(2rem, 5vw, 3rem); 
+  font-weight: 900; 
+  text-align: center; 
+  color: var(--accent); 
+  letter-spacing: 0.15em; 
+  text-shadow: 0 0 20px rgba(0,255,127,.6), 0 0 60px rgba(0,255,127,.3); 
+  margin-bottom: 60px; 
+  animation: titlePulse 4s ease-in-out infinite; 
+}
+
+.group { 
+  margin-bottom: 56px; 
+}
+
+.group-label { 
+  font-family: 'Orbitron', monospace; 
+  font-size: .85rem; 
+  font-weight: 700; 
+  letter-spacing: .25em; 
+  text-transform: uppercase; 
+  color: var(--accent2); 
+  text-align: center; 
+  margin-bottom: 28px; 
+  position: relative; 
+}
+
+.group-label::before, .group-label::after { 
+  content: ''; 
+  position: absolute; 
+  top: 50%; 
+  width: 25%; 
+  height: 1px; 
+  background: linear-gradient(90deg, transparent, var(--accent2)); 
+}
+
+.group-label::before { 
+  right: 56%; 
+  transform: scaleX(-1); 
+}
+
+.group-label::after { 
+  left: 56%; 
+}
+
+.grid { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 24px; 
+}
+
+@media (max-width: 768px) {
+  #teams {
+    padding: 50px 15px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .grid { 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 18px; 
+    width: 100%; 
+  }
+}
+
+@media (max-width: 480px) {
+  #teams {
+    padding: 30px 10px;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .group {
+    margin-bottom: 40px;
+  }
+  
+  .group-label {
+    font-size: 0.75rem;
+    margin-bottom: 20px;
+  }
+}

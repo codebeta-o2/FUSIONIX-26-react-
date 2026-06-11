@@ -1,0 +1,324 @@
+.timeline-section, .rules-section { 
+  position: relative; 
+  z-index: 1; 
+  width: 100%; 
+  max-width: 1100px; 
+  margin: 0 auto; 
+  padding: var(--section-py) var(--section-px); 
+}
+
+.timeline-header { 
+  text-align: center; 
+  margin-bottom: 10px; 
+}
+
+.timeline-title { 
+  font-family: var(--font-display); 
+  font-size: clamp(1.4rem, 6vw, 4.5rem); 
+  font-weight: 600; 
+  color: var(--neon-green); 
+  letter-spacing: 0.08em; 
+  text-transform: uppercase; 
+  line-height: 1.2; 
+  word-break: break-word; 
+  text-shadow: 0 0 7px var(--neon-green), 0 0 25px var(--neon-green), 0 0 60px var(--neon-green), 0 0 60px rgba(102, 221, 166, 0.33); 
+  animation: titlePulse 4s ease-in-out infinite; 
+}
+
+@keyframes titlePulse { 
+  0%,100% { text-shadow: 0 0 10px var(--neon-green), 0 0 30px var(--neon-green), 0 0 70px var(--neon-green), 0 0 120px rgba(0, 255, 136, 0.33); } 
+  50% { text-shadow: 0 0 6px var(--neon-green), 0 0 20px var(--neon-green), 0 0 50px var(--neon-green), 0 0 90px rgba(0, 255, 136, 0.13); } 
+}
+
+.title-underline { 
+  width: clamp(60px, 30vw, 120px); 
+  height: 2px; 
+  background: linear-gradient(90deg, transparent, var(--neon-green), transparent); 
+  margin: 12px auto 0; 
+  box-shadow: 0 0 10px var(--neon-green); 
+}
+
+.road-wrapper { 
+  position: relative; 
+  width: 100%; 
+  max-width: 900px; 
+  margin: auto; 
+  transform: scale(0.82); 
+  transform-origin: top center; 
+}
+
+.road-wrapper svg { 
+  width: 100%; 
+  height: 900px; 
+  overflow: visible; 
+  display: block; 
+}
+
+.road-line { 
+  fill: none; 
+  stroke: #fff; 
+  stroke-width: 4; 
+  stroke-linecap: round; 
+  stroke-dasharray: 25 18; 
+  stroke-dashoffset: 0; 
+  animation: moveRoad 2s linear infinite; 
+}
+
+@keyframes moveRoad { 
+  from { stroke-dashoffset: 0; } 
+  to { stroke-dashoffset: -86; } 
+}
+
+.card { 
+  position: absolute; 
+  width: 260px; 
+  will-change: transform; 
+  animation: floatCard 6s ease-in-out infinite; 
+}
+
+.card h2 { 
+  font-size: 2rem; 
+  margin-bottom: 15px; 
+  line-height: 1.2; 
+  font-family: var(--font-display); 
+}
+
+@keyframes floatCard { 
+  0%,100% { transform: translate3d(0,0,0); } 
+  50% { transform: translate3d(0,-8px,0); } 
+}
+
+.card p { 
+  font-size: 15px; 
+  line-height: 1.7; 
+  font-family: var(--font-body); 
+}
+
+.blue h2 { 
+  color: #3b82ff; 
+}
+
+.green h2 { 
+  color: #29ffc6; 
+}
+
+.yellow h2 { 
+  color: #d7ff46; 
+}
+
+.concept { 
+  left: -10px; 
+  top: 120px; 
+  text-align: right; 
+}
+
+.hardware { 
+  right: -79px; 
+  top: 290px; 
+}
+
+.software { 
+  left: -80px; 
+  top: 500px; 
+  text-align: right; 
+}
+
+.pin { 
+  position: absolute; 
+  width: 80px; 
+  height: 80px; 
+  border: 3px solid; 
+  border-radius: 50%; 
+  backdrop-filter: blur(10px); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 1.4rem; 
+  animation: pinPulse 2s infinite; 
+}
+
+.pin::after { 
+  content: ''; 
+  position: absolute; 
+  bottom: -18px; 
+  width: 22px; 
+  height: 22px; 
+  border-right: 3px solid; 
+  border-bottom: 3px solid; 
+  border-color: inherit; 
+  transform: rotate(45deg); 
+  background: #00110d; 
+}
+
+@keyframes pinPulse { 
+  0%,100% { transform: scale(1); } 
+  50% { transform: scale(1.08); } 
+}
+
+.blue-pin { 
+  border-color: #3b82ff; 
+  left: 265px; 
+  top: 140px; 
+  box-shadow: 0 0 20px rgba(59,130,255,.5); 
+}
+
+.green-pin { 
+  border-color: #29ffc6; 
+  right: 200px; 
+  top: 260px; 
+  box-shadow: 0 0 20px rgba(41,255,198,.5); 
+}
+
+.yellow-pin { 
+  border-color: #d7ff46; 
+  left: 200px; 
+  top: 480px; 
+  box-shadow: 0 0 20px rgba(215,255,70,.5); 
+}
+
+@media (max-width: 1100px) {
+  .road-wrapper { 
+    transform: scale(0.72); 
+  }
+  
+  .card { 
+    width: 220px; 
+  }
+  
+  .card h2 { 
+    font-size: 1.8rem; 
+  }
+  
+  .card p { 
+    font-size: 14px; 
+  }
+  
+  .blue-pin { 
+    left: 26%; 
+    top: 120px; 
+    transform: translateX(-50%); 
+  }
+  
+  .green-pin { 
+    left: 74%; 
+    right: auto; 
+    top: 260px; 
+    transform: translateX(-50%); 
+  }
+  
+  .yellow-pin { 
+    left: 15%; 
+    top: 480px; 
+    transform: translateX(-50%); 
+  }
+  
+  .hardware { 
+    margin-right: -65px; 
+  }
+  
+  .concept { 
+    margin-left: -50px; 
+  }
+  
+  .software { 
+    margin-left: -60px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-section {
+    padding: 50px 15px;
+  }
+  
+  .timeline-title {
+    font-size: 1.8rem;
+  }
+  
+  .road-wrapper {
+    transform: scale(0.65);
+  }
+  
+  .card {
+    width: 180px;
+  }
+  
+  .card h2 {
+    font-size: 1.4rem;
+  }
+  
+  .card p {
+    font-size: 12px;
+  }
+
+
+
+  .concept { 
+  left: 50px; 
+  top: 90px; 
+  text-align: right; 
+}
+
+.hardware { 
+  right: 79px; 
+  top: 290px; 
+}
+
+.software { 
+  left: 80px; 
+  top: 400px; 
+  text-align: right; 
+}
+}
+
+@media (max-width: 480px) {
+  .timeline-section {
+    padding: 30px 10px;
+  }
+  
+  .road-wrapper { 
+    transform: scale(1); 
+    padding: 15px 10px; 
+  }
+  
+  .road-wrapper svg { 
+    height: 600px; 
+  }
+  
+  .card { 
+    width: 30%; 
+    max-width: 160px; 
+  }
+  
+  .card h2 { 
+    font-size: 1.1rem; 
+  }
+  
+  .card p { 
+    font-size: 12px; 
+    line-height: 1.4; 
+  }
+  
+  .pin { 
+    width: 52px; 
+    height: 52px; 
+  }
+  
+  .blue-pin { 
+    left: 45%; 
+    top: 60px; 
+    transform: translateX(-50%); 
+  }
+  
+  .green-pin { 
+    left: 74%; 
+    right: auto; 
+    top: 220px; 
+    transform: translateX(-50%); 
+  }
+  
+  .yellow-pin { 
+    left: 15%; 
+    top: 300px; 
+    transform: translateX(-50%); 
+  }
+}

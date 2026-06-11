@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Orbitron:wght@400..900&family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap');
+
+.hero-section { 
+  position: relative; 
+  width: 100%; 
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: flex-start; 
+  padding: 20px; 
+  overflow: hidden; 
+}
+
+.hero-container { 
+  position: relative; 
+  z-index: 10; 
+  width: 100%; 
+  max-width: 1400px; 
+  margin-top: 140px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: stretch; 
+  gap: 20px; 
+  padding: 20px; 
+  pointer-events: none; 
+}
+
+.hero-container > * { 
+  pointer-events: auto; 
+}
+
+.left-panel { 
+  flex: 1; 
+  /* max-width: 380px;  */
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+}
+
+.center-panel { 
+  flex: 1; 
+  display: flex; 
+  align-items: flex-end; 
+  justify-content: center; 
+  padding-bottom: 20px; 
+  min-height: 500px; 
+}
+
+.right-panel { 
+  flex: 1; 
+  /* max-width: 400px;  */
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  gap: 25px; 
+}
+
+.sci-fi-box { 
+  position: relative; 
+  background: var(--panel-bg); 
+  border: 1px solid var(--matrix-green); 
+  padding: 40px; 
+  border-radius: 10px; 
+  box-shadow: inset 0 0 20px rgba(0, 255, 102, 0.1), 0 0 15px rgba(0, 255, 102, 0.2); 
+  backdrop-filter: blur(5px); 
+}
+
+.sci-fi-box::before, .sci-fi-box::after { 
+  content: ''; 
+  position: absolute; 
+  width: 20px; 
+  height: 20px; 
+  border: 3px solid var(--matrix-green); 
+}
+
+.sci-fi-box::before { 
+  top: -2px; 
+  left: -2px; 
+  border-right: none; 
+  border-bottom: none; 
+}
+
+.sci-fi-box::after { 
+  bottom: -2px; 
+  right: -2px; 
+  border-left: none; 
+  border-top: none; 
+}
+
+.tagline { 
+  font-family: "Orbitron", sans-serif; 
+  font-size: 0.85rem; 
+  letter-spacing: 2px; 
+  color: #fff; 
+  margin-bottom: 25px; 
+  border-bottom: 1px solid rgba(0, 255, 102, 0.3); 
+  padding-bottom: 10px; 
+  display: inline-block; 
+}
+
+.sci-fi-box h1 { 
+  font-family: var(--font-display); 
+  font-size: 2.2rem; 
+  color: #fff; 
+  line-height: 1.4; 
+  font-weight: 500; 
+  letter-spacing: 1px; 
+}
+
+.subtitle { 
+  margin-top: 20px; 
+  font-size: 1rem; 
+  color: #b3b3b3; 
+  line-height: 1.6; 
+}
+
+.perk-badge { 
+  display: flex; 
+  align-items: center; 
+  background: var(--panel-bg); 
+  border: 1px solid var(--matrix-green); 
+  padding: 15px 25px; 
+  font-family: var(--font-display); 
+  font-size: 1.1rem; 
+  color: #ffffff; 
+  box-shadow: inset 0 0 15px rgba(0, 255, 102, 0.1), 0 0 10px rgba(0, 255, 102, 0.2); 
+  clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  backdrop-filter: blur(5px); 
+}
+
+.perk-badge:hover { 
+  transform: translateX(-10px); 
+  box-shadow: inset 0 0 20px rgba(0, 255, 102, 0.3), 0 0 20px rgba(0, 255, 102, 0.5); 
+}
+
+.perk-icon { 
+  margin-right: 20px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  filter: drop-shadow(0 0 5px var(--matrix-green)); 
+  flex-shrink: 0; 
+}
+
+.register-btn-glow { 
+  background: var(--panel-bg); 
+  color: #ffffff; 
+  font-family: var(--font-display); 
+  font-size: 1.4rem; 
+  font-weight: 700; 
+  padding: 18px 50px; 
+  border: 1px solid var(--matrix-green); 
+  cursor: pointer; 
+  box-shadow: inset 0 0 15px rgba(0, 255, 102, 0.2), 0 0 15px rgba(0, 255, 102, 0.4); 
+  clip-path: polygon(25px 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%, 0 25px); 
+  transition: all 0.3s ease; 
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+  backdrop-filter: blur(5px); 
+}
+
+.register-btn-glow:hover { 
+  background: rgb(0, 208, 255); 
+  color: #000; 
+  box-shadow: 0 0 30px rgb(135, 239, 255); 
+}
+
+@media (max-width: 1100px) {
+  .hero-container { 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 50px; 
+  }
+  
+  .left-panel, .right-panel { 
+    max-width: 100%; 
+    width: 100%; 
+  }
+  
+  .center-panel { 
+    height: 350px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 10px;
+  }
+  
+  .hero-container { 
+    margin-top: 120px; 
+    padding: 10px;
+  }
+  
+  .sci-fi-box { 
+    padding: 25px; 
+  }
+  
+  .sci-fi-box h1 { 
+    font-size: 1.8rem; 
+  }
+  
+  .subtitle { 
+    font-size: 0.9rem; 
+  }
+  
+  .perk-badge { 
+    font-size: 1rem; 
+    padding: 12px 20px; 
+  }
+  
+  .perk-icon {
+    margin-right: 15px;
+  }
+  
+  .center-panel { 
+    min-height: 250px; 
+  }
+  
+  .register-btn-glow { 
+    padding: 15px 35px; 
+    font-size: 1.2rem; 
+  }
+  .canvas{
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 5px;
+    min-height: auto;
+  }
+  
+  .hero-container {
+    margin-top: 100px;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10px;
+  }
+  
+  .left-panel, .right-panel {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .sci-fi-box {
+    padding: 15px 20px;
+    border-radius: 8px;
+  }
+  
+  .sci-fi-box h1 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+  }
+  
+  .tagline {
+    font-size: 0.75rem;
+    margin-bottom: 15px;
+  }
+  
+  .subtitle {
+    font-size: 0.85rem;
+    margin-top: 15px;
+  }
+  
+  .right-panel {
+    gap: 15px;
+  }
+  
+  .perk-badge {
+    flex-direction: column;
+    text-align: center;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+  
+  .perk-icon {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+  
+  .perk-icon svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  
+  .center-panel {
+    min-height: auto;
+    padding-bottom: 0;
+  }
+  
+  .register-btn-glow {
+    padding: 12px 24px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+}

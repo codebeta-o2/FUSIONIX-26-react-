@@ -1,38 +1,250 @@
-.App {
-  text-align: center;
+/* =========================
+   RESET
+========================= */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  overflow-x: hidden !important;
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+  background: #030c08;
+  color: #fff;
+  font-family: "Segoe UI", sans-serif;
+  position: relative;
+  overflow-x: hidden !important;
+}
+
+/* =========================
+   MATRIX CANVAS
+========================= */
+
+#matrixCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -999;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* =========================
+   GLOBAL ELEMENTS
+========================= */
+
+img,
+video,
+iframe,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+p {
+  line-height: 1.7;
+}
+
+/* =========================
+   FLEX FIXES
+========================= */
+
+.flex,
+.row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+.flex > *,
+.row > * {
+  min-width: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* =========================
+   GRID FIXES
+========================= */
+
+.grid {
+  display: grid;
+  width: 100%;
+}
+
+.grid > * {
+  min-width: 0;
+}
+
+/* =========================
+   CARD FIXES
+========================= */
+
+.card,
+.hero-card,
+.about-card,
+.timeline-card,
+.rule-card,
+.team-card,
+.sponsor-card,
+.faq-card {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden !important;
   }
+
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  * {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================
+   EMERGENCY OVERFLOW FIX
+========================= */
+
+body::before {
+  content: "";
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  pointer-events: none;
+}
+
+.App {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
