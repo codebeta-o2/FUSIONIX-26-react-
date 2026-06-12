@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import './HeroSection.css';
+import { Application } from "@splinetool/runtime";;
 
 export default function HeroSection() {
   const splineCanvasRef = useRef(null);
@@ -8,20 +9,29 @@ export default function HeroSection() {
     const canvas = splineCanvasRef.current;
     if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     
-    function loadSpline() {
-      import('https://unpkg.com/@splinetool/runtime@1.9.89/build/runtime.js')
-        .then(({ Application }) => {
-          const app = new Application(canvas);
-          return app.load('https://prod.spline.design/60rcxftHjrZq554K/scene.splinecode')
-            .then(() => {
-              const robot = app.findObjectByName('Robot');
-              if (!robot) return;
-              const center = () => { robot.position.x = 0; robot.position.y = 0; };
-              center();
-              window.addEventListener('resize', center);
-            });
-        }).catch(() => {});
-    }
+function loadSpline() {
+  const app = new Application(canvas);
+
+  app.load(
+    "https://prod.spline.design/60rcxftHjrZq554K/scene.splinecode"
+  )
+  .then(() => {
+    const robot = app.findObjectByName("Robot");
+
+    if (!robot) return;
+
+    const center = () => {
+      robot.position.x = 0;
+      robot.position.y = 0;
+    };
+
+    center();
+    window.addEventListener("resize", center);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+}
 
     const obs = new IntersectionObserver((entries, o) => {
       if (entries.some(e => e.isIntersecting)) {
