@@ -35,7 +35,7 @@ export default function SponsorsSection() {
             <div className="back-title">{sponsor.name}</div>
             <p className="back-desc">{sponsor.desc}</p>
           </div>
-          <a href="#" className="btn btn-visit">Visit Website</a>
+          <a href="/" className="btn btn-visit">Visit Website</a>
         </div>
       </div>
     </div>
